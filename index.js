@@ -8,10 +8,10 @@ var app=express();
 
 
 var Ftp = new JSFtp({
-  host: "labouardy.com",
+  host: "server",
   port: 21, // defaults to 21
-  user: "mlabouar", // defaults to "anonymous"
-  pass: "semanur66125-" // defaults to "@anonymous"
+  user: "", // defaults to "anonymous"
+  pass: "" // defaults to "@anonymous"
 });
 
 app.use(bodyParser.json());

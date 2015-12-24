@@ -19,6 +19,12 @@ angular.module('publicApp')
    		},
    		countries:function(){
    			return $http.get(url+'/countries');
+   		},
+   		update:function(){
+   			return $http.get(url+'/update');
+   		},
+   		upload:function(name){
+   			return $http.get(url+'/upload/'+name);
    		}
    	}
   });

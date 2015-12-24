@@ -13,17 +13,22 @@ angular.module('publicApp')
     $scope.stations=[];
     Database.stations($scope.name)
     	.success(function(data){
-    		console.log(data);
     		$scope.stations=data;
     	});
     $scope.create=function(){
     	$scope.stations.push($scope.station);
-    	console.log(JSON.stringify($scope.stations));
     	Database.save($scope.stations, $scope.name);
     	$scope.station={};
     }
     $scope.delete=function(index){
     	$scope.stations.splice(index,1);
     	Database.save($scope.stations, $scope.name);
+    }
+
+    $scope.update=function(){
+    	 Database.update()
+	    	.success(function(data){
+	    		$scope.stations=data;
+	    	});
     }
   });

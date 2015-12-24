@@ -13,4 +13,18 @@ angular.module('publicApp')
     	.success(function(data){
     		$scope.countries=data;
     	});
+
+    $scope.refresh=function(){
+    	Database.update()
+    	.success(function(){
+    		toastr.success('Refreshed !', 'Arabic radio');
+    	});
+    };
+
+    $scope.upload=function(name){
+    	Database.upload(name)
+    	.success(function(){
+    		toastr.success(name+' uploaded !', 'Arabic radio');
+    	});
+    }
   });

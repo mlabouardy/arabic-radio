@@ -2,7 +2,17 @@ var express=require('express');
 var fs=require('fs');
 var bodyParser = require('body-parser')
 var async = require('async');
+var JSFtp = require("jsftp");
 var app=express();
+
+
+
+var Ftp = new JSFtp({
+  host: "labouardy.com",
+  port: 21, // defaults to 21
+  user: "mlabouar", // defaults to "anonymous"
+  pass: "semanur66125-" // defaults to "@anonymous"
+});
 
 app.use(bodyParser.json());
 app.use(function(req, res, next) {
@@ -46,12 +56,35 @@ function update(data){
 	});
 }
 
+
+app.get('/upload/:name',function(req,res){
+	var name=req.params.name.toLowerCase();
+	name=name.replace(/ /g, '-');
+	var path='models/'+name+'.json';
+	fs.readFile(path, function(err, buffer) {
+     if(err) {
+         console.error(err);
+     }
+     else {
+         Ftp.put(buffer, '/public_html/radio/arabic/'+name+'.json', function(err) {
+             if (err) {
+                 console.error(err);
+             }
+             else {
+             	 console.error(name+" uploaded successfuly");
+             }
+         });
+         res.send(200);
+     }
+ });
+});
+
 app.get('/update',function(req,res){
 	fs.readFile('./models/countries.json', function (err, data) {
 	  if (err) throw err;
 	  data=JSON.parse(data);
 	  update(data);
-	  res.status(200);
+	  res.send(200);
 	});
 });
 

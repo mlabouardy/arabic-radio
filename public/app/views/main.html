@@ -1,6 +1,19 @@
-<ul class="list-group">
-  <li class="list-group-item" ng-repeat="country in countries|orderBy:'name'">
-    <span class="badge">{{country.total}}</span>
-    <img ng-src="{{country.flag}}" width="35px"/> <a ng-href="#/country/{{country.name}}">{{country.name}}</a>
-  </li>
-</ul>
+<div class="row">
+  <div class="col-md-12">
+    <div class="button-group pull-right">
+      <a class="btn btn-success btn-xs" ng-click="upload('Countries')">Upload</a>
+      <a class="btn btn-warning btn-xs" ng-click="refresh()">Refresh</a>
+    </div>
+ </div>
+</div><br/>
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="country in countries|orderBy:'name'">
+        <span class="badge">{{country.total}}</span>
+        <a class="btn btn-success btn-xs" ng-click="upload(country.name)">Upload</a>
+        <img ng-src="{{country.flag}}" width="35px"/> <a ng-href="#/country/{{country.name}}">{{country.name}}</a>
+      </li>
+    </ul>
+  </div>
+  </div

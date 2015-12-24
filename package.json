@@ -13,6 +13,7 @@
     "body-parser": "^1.14.2",
     "express": "^4.13.3",
     "fs": "0.0.2",
+    "jsftp": "^1.5.3",
     "prettyjson": "^1.1.3"
   }
 }

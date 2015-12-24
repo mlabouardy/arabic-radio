@@ -1,0 +1,32 @@
+[
+    {
+        "url": "http://dedi.radio-coran.net:8000/live.mp3",
+        "name": "Radio Coran",
+        "logo": "http://cdn-radiotime-logos.tunein.com/s0q.png"
+    },
+    {
+        "url": "http://tiaret.ice.infomaniak.ch/14.aac?type=.flv&ua=Infomaniak%20Flash%20Player%20v2&",
+        "name": "Radio Tiaret",
+        "logo": "http://cdn-radiotime-logos.tunein.com/s122491q.png"
+    },
+    {
+        "name": "JIL FM",
+        "url": "http://jil-fm.ice.infomaniak.ch/jilfm.aac",
+        "logo": "http://cdn-radiotime-logos.tunein.com/s154053q.png"
+    },
+    {
+        "name": "Alger Ch 3",
+        "url": "http://ch3.ice.infomaniak.ch/ch3-64.aac",
+        "logo": "http://cdn-radiotime-logos.tunein.com/s25411q.png"
+    },
+    {
+        "name": "Radio Tlemcen",
+        "logo": "http://cdn-radiotime-logos.tunein.com/s16039q.png",
+        "url": "http://tlemcen.ice.infomaniak.ch/13.aac"
+    },
+    {
+        "url": "http://ch1.ice.infomaniak.ch/ch1-64.aac",
+        "name": "Alger Chaine 1",
+        "logo": "http://cdn-radiotime-logos.tunein.com/s16034q.png"
+    }
+]
